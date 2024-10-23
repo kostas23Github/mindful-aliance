@@ -1,9 +1,5 @@
 /* < Hero Section > */
 
-section.hero-section {
-  background: linear-gradient(to bottom right, #F2F4FF, #EAEDFF);
-}
-
 div.hero-box {
     padding: 80px;
     margin-top: 60px;
