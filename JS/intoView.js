@@ -87,7 +87,7 @@ const observerCallback = (entries, observer) => {
             document
               .querySelector("div.teamQualities-next-arrow")
               .dispatchEvent(event);
-          }, 5000); // Trigger the event every 5 seconds
+          }, 10000); // Trigger the event every 5 seconds
         }
       } else {
         // Clear the interval when the element is out of view

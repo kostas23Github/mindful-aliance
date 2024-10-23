@@ -121,8 +121,6 @@ const circleMoveToSlide = (e) => {
   
   // Get e.target's index
   let currentIndex = e.currentTarget.getAttribute("index");
-  console.log(currentIndex);
-  
 
   // Display the slide with same index
   if (teamQualitiesCarousel) {
