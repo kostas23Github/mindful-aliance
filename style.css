@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --primary900: #020b29;
+  --primary800: #1c276c;
+  --primary700: #2f4a8a;
+  --primary600: #3e54db;
+  --primary500: #465ff6;
+  --primary100: #d6dbff;
+  --neutrals900: #111827;
+  --neutrals800: #1f2937;
+  --neutrals600: #4C5564;
+  --neutrals500: #6B7280;
+  --neutrals400: #9ca3af;
+  --neutrals100: #D6DBFF;
+  --white: #ffffff;
+  --text-size-larger: 18px;
+  --text-size-smaller: 14px;
+  --medium: 500;
+  --semi-bold: 600;
+  --bold: 700;
+  --extra-bold: 800;
+  --black: 900;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.15;
+}
+
+body {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1rem;
+  color: var(--neutrals800);
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 44px;
+  font-weight: var(--extra-bold);
+  line-height: 52px;
+  text-align: start;
+  color: var(--primary800);
+  letter-spacing: 1.1px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: var(--bold);
+  line-height: 44px;
+  text-align: center;
+  letter-spacing: .6px;
+  color: var(--primary800);
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: var(--bold);
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: .4px;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: var(--semi-bold);
+  line-height: 30px;
+  text-align: start;
+  letter-spacing: .4px;
+}
+
+h5 {
+  font-size: 20px;
+  font-weight: var(--semi-bold);
+  line-height: 30px;
+  letter-spacing: .4px;
+  color: var(--primary600);
+}
+
+p {
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--neutrals800);
+}
+
+ul {
+  list-style-type: none;
+}
+
+li > * {
+  cursor: pointer;
+}
+
+i::before {
+  font-size: var(--text-size-smaller);
+}
+
+a {
+  text-decoration: none;
+  font-size: inherit;
+  color: var(--neutrals900);
+}
+
+/* To be used with a tag buttons. */
+.button {
+  width: max-content;
+  display: flex;
+  border-radius: 40px; /* A value big enough for all buttons. */
+  font-weight: var(--semi-bold);
+}
+
+.box {
+  padding: 80px;
+  display: flex;
+  gap: 28px;
+}
+
+.disabled-btn {
+  pointer-events: none; /* Prevents clicking */
+  cursor: not-allowed; /* Shows "disabled" cursor */
+}
+
+/* Reset input styles */
+input {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  width: 100%;
+}
+
+button {
+  all: unset; /* Reset all default styles */
+  display: inline-block; /* Ensure the button behaves like a button */
+  cursor: pointer; /* Show pointer cursor on hover */
+  background: none;
+  border: none;
+  font: inherit; /* Inherit font styles from parent */
+  color: inherit; /* Inherit text color */
+  text-align: center;
+}
+
+/* < Main > */
+section.readMore-section,
+section.services-section,
+section.whyUs-section,
+section.teamQualities-section,
+section.customer-feedback-section,
+section.ai-section {
+  background: linear-gradient(to bottom, #ffffff 50%, #e9efff 100%);
+}
+
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 38px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+  
+  .box {
+    padding: 60px 40px;
+  }
+}
+
+@media (min-width: 1440px) { 
+  .w-1440 {
+    width: 85%;
+    margin: 0 auto;
+  }
+}

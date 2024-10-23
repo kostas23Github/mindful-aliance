@@ -1,0 +1,151 @@
+/* < Hero Section > */
+
+div.hero-box {
+    padding: 80px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  div.title-text-box {
+    width: 39%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    flex: 0 2 505px;
+  }
+  
+  div.title-text-subbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  div.title-text-subbox > h4.subtitle {
+    color: var(--primary600);
+  }
+  
+  div.title-text-subbox > p.title-text {
+    font-size: var(--text-size-smaller);
+    letter-spacing: 0.3px;
+  }
+  
+  div.title-image-box {
+    width: 46%;
+    flex: 0 1 590px;
+  }
+  
+  div.title-image-box > img {
+    width: 100%;
+    aspect-ratio: 590/496.05;
+  }
+  
+  .svg-separator {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .svg-separator svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  div.heroPartners-box {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    background: linear-gradient(
+      to top right,
+      #004eeb -40%,
+      #1d265c 27%,
+      #1e2559 42%,
+      #0d1640 67%,
+      #0f40a3 120%
+    );
+  }
+  
+  div.partners-title-box {
+    padding: 48px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  div.partners-title-box > h4 {
+    color: var(--white);
+    text-align: center;
+  }
+  
+  div.partners-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  div.partner {
+    width: 200px;
+    height: 70px;
+    padding: 0 10px;
+    background-color: var(--white);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* </ Hero Section > */
+
+/* < Responsive > */
+@media (max-width: 550px) {
+  div.hero-box {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 550.1px) and (max-width: 750px) {
+  div.hero-box {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  div.hero-box {
+    padding: 80px 40px;
+  }
+
+  div.partners-title-box {
+    padding: 48px 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  div.hero-box {
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  div.heroPartners-box {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1600px) {
+  div.hero-box {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+}
+/* </ Responsive > */

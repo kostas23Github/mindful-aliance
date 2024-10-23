@@ -1,0 +1,273 @@
+/* < Navigation Menu MOBILE > */
+
+div.overlay-container {
+  display: block;
+}
+
+div.overlay {
+  opacity: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #33333380;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: transform .6s .4s, opacity 1s .1s;
+}
+
+div.overlay.show {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: transform .8s, opacity .7s .1s;
+}
+
+div.menu-box-container {
+  min-width: 300px;
+  max-width: 100%;
+  width: 50%;
+  height: 100%;
+  z-index: 101;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform .8s .1s, opacity .8s;
+}
+
+div.menu-box-container.show {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: transform 1s .8s, opacity 1s .3s;
+}
+
+ul.main-menu.mobile {
+  height: max-content;
+  width: 100%;
+  display: block;
+  padding: 24px 48px;
+  flex: content; /* To overwrite the 804px flex basis. */
+}
+
+div.menu-close-btn {
+  display: none;
+  margin: 0 auto;
+  padding: 6px 10px;
+  outline: 1px solid var(--primary500);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+div.menu-close-btn:hover {
+  outline: none;
+  background-color: var(--primary500);
+  color: white;
+  transition: 0.5s;
+}
+
+div.menu-close-btn:hover > i::before {
+  color: var(--white);
+  transition: 0.5s;
+}
+
+div.menu-close-btn > i::before {
+  font-size: 36px;
+  color: var(--primary500);
+}
+
+/* </ Navigation Menu MOBILE > */
+
+/* < Navigation Menu LG > */
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 90px;
+  padding: 8px 80px;
+  position: fixed;
+  top: 0;
+  z-index: 3; /* The hero section is 2 & 1. */
+  /* background-color: #ffffffc5; */
+  transition: min-height .3s ease-out, max-height .3s ease-out;
+}
+
+div.menu-box-lg {
+  display: flex;
+}
+
+ul.main-menu {
+  height: 38px;
+  display: flex;
+  flex: 0 1 804px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+li.menu-item {
+  display: flex;
+  flex-direction: column;
+  color: var(--neutrals900);
+  line-height: 22px;
+  font-weight: var(--semi-bold);
+}
+
+ul.main-menu.mobile > li.menu-item {
+  padding: 12px 0;
+}
+
+li.menu-item > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+li.menu-item > div > p {
+  font-size: var(--text-size-smaller);
+  line-height: 22px;
+}
+
+li.menu-item > div > i {
+  line-height: inherit;
+}
+
+a.consultation-btn {
+  color: var(--white);
+  gap: 8px;
+  background-color: var(--primary500);
+  padding: 15px 18px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px #00000026;
+  letter-spacing: .7px;
+  line-height: 16px;
+  font-size: var(--text-size-smaller);
+  flex-grow: 1;
+}
+
+a.consultation-btn:hover {
+  outline: 1px solid var(--primary500);
+  background-color: var(--white);
+  color: var(--primary500);
+  transition: 0.5s;
+}
+
+a.consultation-btn > i::before {
+  font-size: 12px;
+}
+
+/* Hamburger Btn */
+div.menu-toggle-btn {
+  display: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  outline: 1px solid var(--primary500);
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+div.menu-toggle-btn:hover {
+  outline: none;
+  background-color: var(--primary500);
+  color: white;
+  transition: 0.2s;
+}
+
+div.menu-toggle-btn:hover > i::before {
+  color: var(--white);
+  transition: 0.5s;
+}
+
+div.menu-toggle-btn > i::before {
+  font-size: 36px;
+  color: var(--primary500);
+}
+
+/* < Dropdown > */
+
+li.menu-item > div.item-options-container {
+  position: relative;
+}
+
+ul.dropdown-list {
+  position: absolute;
+  width: max-content;
+  border-radius: 10px;
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+  max-height: 0px; /* Initially collapsed */
+  overflow: hidden; /* Hide content when collapsed */
+}
+
+li.menu-item.show ul.dropdown-list {
+  max-height: 150px; /* Arbitrary large value */
+  transition: max-height 0.5s ease-out; /* Transition max-height */
+  border: 1px solid #7a8dff26;
+  padding: 8px 12px;
+  box-shadow: 0 0 20px #7a8dff26;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* When in mobile view it changes from absolute to relative, bc it has to occupy space, i.e. push other elements down. */
+ul.main-menu.mobile ul.dropdown-list {
+  position: relative;
+}
+
+ul.dropdown-list > li.dropdown-item {
+  font-size: 14px;
+  padding: 4px 0;
+}
+
+/* </ Dropdown > */
+
+/* </ Navigation Menu LG > */
+
+/* < Responsiveness > */
+
+@media (max-width: 800px) {
+  nav {
+    padding: 8px 40px;
+  }
+}
+
+@media (max-width: 1050px) {
+  ul.main-menu {
+    display: none;
+  }
+
+  div.menu-toggle-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 1200px) {
+  ul.main-menu {
+    gap: 10px;
+  }
+
+  li.menu-item > div {
+    gap: 2px;
+  }
+}
+
+@media (min-width: 1440px) { 
+  /* Since it is position: fixed, margin prop doesn't work, so the 15% in width reduction of every elem is added to its padding(15/2). 80px is what it had before. */
+  nav {
+    padding: 8px calc(7.5% + 80px);
+  }
+}
+
+@media (min-width: 1600px) {
+  nav {
+    padding: 8px calc(10% + 80px);
+  }
+}
+
+/* </ Responsiveness > */

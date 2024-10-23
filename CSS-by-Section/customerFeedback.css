@@ -1,0 +1,92 @@
+/* < Customer Feedback Section > */
+div.customers-statement-carousel-container > ul.carousel-slides-container {
+  justify-content: center;
+  flex: 0 1 500px;
+  height: 400px;
+}
+
+li.customer-statement-card {
+  position: absolute;
+  height: 100%;
+  padding: 28px;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to left, #d9deff -5%, #b1bdff 80%) 1;
+  background: linear-gradient(
+    to top,
+    #fbfbff00 -100%,
+    #eef0ff 49%,
+    #fbfbff 100%
+  );
+  box-shadow: 0 0 20px #7a8dff26;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+div.employee-container {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, #eaedff, #677cff 50%, #eaedff) 1;
+}
+
+div.employee-container > img {
+  background-size: contain;
+  width: 58px;
+  height: 58px;
+}
+
+div.employee-info-container {
+  padding: 2px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+div.employee-info-container > p {
+  font-size: var(--text-size-larger);
+  line-height: 26px;
+  color: var(--primary500);
+  font-weight: var(--semi-bold);
+  text-align: start;
+}
+
+div.employee-info-container > p:nth-of-type(2) {
+  color: var(--neutrals600);
+  line-height: 24px;
+}
+
+li.customer-statement-card > h5 {
+  text-align: start;
+  flex-grow: 1;
+}
+
+div.customer-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.customer-info > img {
+  height: 43px;
+}
+
+/* </ Customer Feedback Section> */
+
+/* < Responsive > */
+
+@media (max-width: 460px) {
+  div.customers-statement-carousel-container > ul.carousel-slides-container {
+    height: 500px;
+  }
+}
+
+@media (max-width: 380px) {
+  div.customers-statement-carousel-container > ul.carousel-slides-container {
+    height: 700px;
+  }
+}
+
+/* </ Responsive > */

@@ -1,0 +1,117 @@
+
+/* < Opposites Container Section> */
+
+section.opposites-container-section {
+    background: linear-gradient(
+      to top right,
+      #0d2068 -10%,
+      #253b8d 15%,
+      #1f337e 72%,
+      #061242 110%
+    );
+  }
+  
+  div.opposites-box {
+    row-gap: 60px;
+    flex-wrap: wrap;
+  }
+  
+  div.opposite-box {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  div.opposite-content-container {
+    flex: 0 1 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  div.opposite-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  div.opposite-text-container > * {
+    color: var(--white);
+    text-align: left;
+  }
+  
+  div.opposite-text-container > p {
+    font-weight: var(--semi-bold);
+  }
+  
+  div.opposite-content-container > a {
+    padding: 12px 24px;
+    background-color: var(--white);
+    border-radius: 50px;
+    line-height: 24px;
+    color: var(--primary500);
+    transition: 0.3s;
+  }
+  
+  div.opposite-content-container > a:hover {
+    background-color: var(--primary500);
+    color: var(--white);
+    transition: 0.5s;
+  }
+  
+  div.opposite-logo-container {
+    height: 400px;
+    flex: 0 1 520px;
+    padding: 48px 0;
+    background: linear-gradient(
+      to bottom right,
+      #fbfbff,
+      #eef0ff 49%,
+      #fbfbff00 200%
+    );
+    border: 1px solid #d9deff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+  }
+  
+  div.opposite-logo-container > div {
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+  }
+  
+  div.opposite-box.second-box > img {
+    max-width: 66%;
+    object-fit: contain;
+  }
+  
+  /* </ Opposite Container Section > */
+
+  /* < Responsive > */
+@media (max-width: 900px) {
+    div.opposite-box {
+      flex-wrap: wrap;
+    }
+  
+    div.opposite-box.second-box {
+      flex-direction: column-reverse;
+    }
+  
+    div.opposite-box.second-box > img {
+      max-width: 100%;
+    }
+  
+    div.opposite-content-container {
+      flex-basis: auto;
+    }
+  
+  }
+  
+  /* </ Responsive > */  

@@ -1,0 +1,19 @@
+/* < Consultation Section > */
+
+div.consultation-box {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.consultation-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: center;
+}
+
+/* </ Consultation Section > */

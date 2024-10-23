@@ -1,0 +1,84 @@
+/* < AI Section > */
+
+div.ai-box {
+    flex-direction: column;
+    gap: 40px;
+    /* overflow: scroll; */
+  }
+  
+  div.ai-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  div.ai-header > p {
+    font-size: var(--text-size-larger);
+    line-height: 26px;
+    font-weight: var(--semi-bold);
+    text-align: center;
+  }
+  
+  div.ai-technologies {
+    height: max-content;
+    display: flex;
+    flex-direction: row-reverse;
+    background-image: url(../assets/parallax-bg-image.png);
+    background-attachment: fixed; /* Makes the background fixed in place */
+    background-size: 100% 100%; /* Cover the entire area */
+  }
+  
+  ul.ai-technologies-list {
+    max-width: 615px;
+    background: linear-gradient(to bottom, #191542cc 70%, #191542 100%);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 53px;
+  }
+  
+  li.ai-technology {
+    padding-left: 24px;
+    border-left: 2px solid var(--primary100);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0.9;
+  }
+  
+  li.ai-technology:first-child {
+    border-left: 6px solid var(--primary100);
+    opacity: 1;
+  }
+  
+  li.ai-technology > h4,
+  li.ai-technology > p {
+    color: var(--white);
+  }
+  
+  li.ai-technology > p {
+    line-height: 24px;
+  }
+  
+  @media (max-width: 900px) {
+    ul.ai-technologies-list {
+      max-width: 900px;
+      background: linear-gradient(to bottom, #19154293, #191542d7 80%);
+    }
+  
+    li.ai-technology {
+      opacity: 0.7;
+    }
+    
+    li.ai-technology:first-child {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    ul.ai-technologies-list {
+      padding: 60px 20px;
+    }
+  }
+  
+  /* </ AI Section > */
