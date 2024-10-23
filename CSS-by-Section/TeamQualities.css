@@ -53,4 +53,10 @@ li.teamQuality-content-container > * {
   }
 }
 
+@media (max-width: 400px) {
+  div.teamQualities-carousel-container > ul.carousel-slides-container {
+    height: 510px;
+  }
+}
+
 /* </ Responsiveness > */

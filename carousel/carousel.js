@@ -3,42 +3,42 @@ slides = [
   {
     header: {
       icon: "<i class='fa-solid fa-people-group'></i>",
-      title: "1 Experienced team with deep domain insight",
+      title: "Experienced team with deep domain insight",
     },
     text: "Our founder's international experience at top law firms, government regulators, and corporations, coupled with our team's software development and delivery experience. We fully understand the legal sector's business model and operational challenges and ensure our solutions are relevant and strategically effective.",
   },
   {
     header: {
       icon: "<i class='fa-regular fa-star'></i>",
-      title: "2 Unparalleled Expertise",
+      title: "Unparalleled Expertise",
     },
     text: "We offer a unique blend of deep legal knowledge and technical proficiency, positioning ourselves as experts in improving information flow and streamlining processes in your firm.",
   },
   {
     header: {
       icon: "<i class='fa-regular fa-lightbulb'></i>",
-      title: "3 Comprehensive Solution Provider",
+      title: "Comprehensive Solution Provider",
     },
     text: "Not only can we expertly analyze challenges, design bespoke solutions, resolve data issues, and develop specialized software for your firm, but our end-to-end services also ensure faster development times and lower total costs for a smooth, efficient, and cost-effective transformation.",
   },
   {
     header: {
       icon: "<i class='fa-solid fa-robot'></i>",
-      title: "4 Al Mastery",
+      title: "Al Mastery",
     },
     text: "We leverage cutting-edge Al technology to revolutionize your knowledge management and client services efforts to make your firm more efficient, innovative, and responsive to your client's needs.",
   },
   {
     header: {
       icon: "<i class='fa-solid fa-chart-line'></i>",
-      title: "5 Tangible Results",
+      title: "Tangible Results",
     },
     text: "Focusing on delivering real-world returns, we improve operational efficiency, strengthen client relationships, and help carve out a competitive edge for your firm.",
   },
   {
     header: {
       icon: "<i class='fa-solid fa-brain'></i>",
-      title: "6 Ontology of Legal Services",
+      title: "Ontology of Legal Services",
     },
     text: "Not only can we expertly analyze challenges, design bespoke solutions, resolve data issues, and develop specialized software for your firm, but our end-to-end services also ensure faster development times and lower total costs for a smooth, efficient, and cost-effective transformation.",
   },

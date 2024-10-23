@@ -83,7 +83,13 @@ div.customer-info > img {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 370px) {
+  div.customers-statement-carousel-container > ul.carousel-slides-container {
+    height: 600px;
+  }
+}
+
+@media (max-width: 330px) {
   div.customers-statement-carousel-container > ul.carousel-slides-container {
     height: 700px;
   }
