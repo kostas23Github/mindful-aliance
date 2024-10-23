@@ -1,5 +1,9 @@
 /* < Navigation Menu MOBILE > */
 
+nav {
+  background-color:  #EAEDFF;
+}
+
 div.overlay-container {
   display: block;
 }

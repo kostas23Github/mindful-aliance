@@ -1,8 +1,12 @@
 /* < Hero Section > */
 
+section.hero-section {
+  background: linear-gradient(to top, white 30%, #EAEDFF);
+}
+
 div.hero-box {
     padding: 80px;
-    margin-top: 60px;
+    padding-top: 140px;
     display: flex;
     justify-content: space-between;
     align-items: center;
