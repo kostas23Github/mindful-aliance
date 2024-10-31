@@ -1,5 +1,5 @@
 /* < Customer Feedback Section > */
-div.customers-statement-carousel-container > ul.carousel-slides-container {
+div.customers-statement-carousel-container > ul.carousel-slides {
   justify-content: center;
   flex: 0 1 500px;
   height: 400px;
@@ -78,19 +78,19 @@ div.customer-info > img {
 /* < Responsive > */
 
 @media (max-width: 460px) {
-  div.customers-statement-carousel-container > ul.carousel-slides-container {
+  div.customers-statement-carousel-container > ul.carousel-slides {
     height: 500px;
   }
 }
 
 @media (max-width: 370px) {
-  div.customers-statement-carousel-container > ul.carousel-slides-container {
+  div.customers-statement-carousel-container > ul.carousel-slides {
     height: 600px;
   }
 }
 
 @media (max-width: 330px) {
-  div.customers-statement-carousel-container > ul.carousel-slides-container {
+  div.customers-statement-carousel-container > ul.carousel-slides {
     height: 700px;
   }
 }

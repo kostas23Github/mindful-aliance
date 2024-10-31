@@ -24,7 +24,7 @@ div.carousel-container {
   overflow-x: hidden;
 }
 
-ul.carousel-slides-container {
+ul.carousel-slides {
   position: relative;
   height: max-content;
   display: flex;
@@ -32,13 +32,13 @@ ul.carousel-slides-container {
   scrollbar-width: none;
 }
 
-li.carousel-slide {
+li.slide {
   position: absolute;
   height: 100%;
   opacity: 0;
 }
 /* These 2 opacity lines handle the start/end state. The in-between logic is handled by carousel.js. */
-li.carousel-slide.active {
+li.slide.active {
   opacity: 1;
 }
 
@@ -49,7 +49,7 @@ div.carousel-container > div.fa-container {
 }
 
 
-li.carousel-slide i::before {
+li.slide i::before {
   font-size: 28px;
   margin-right: 12px;
 }

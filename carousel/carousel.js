@@ -45,7 +45,7 @@ slides = [
 ];
 
 // Get/Create content from HTML file.
-const list = document.querySelector("ul.carousel-slides-container");
+const list = document.querySelector("ul.carousel-slides");
 
 const circlesContainer = document.querySelector("div.carousel-index-container");
 const circlesContainer2 = document.querySelector(
@@ -60,7 +60,7 @@ const qualitiesArr = slides.map((slide, index) => {
 
   li.append(h3, p);
   li.setAttribute("index", index);
-  li.classList.add("carousel-slide", "teamQuality-content-container");
+  li.classList.add("slide", "teamQuality-content-container");
   h3.innerHTML = slide.header.icon + slide.header.title;
   p.textContent = slide.text;
 

@@ -1,6 +1,6 @@
 /* < Team Qualities Section > */
 
-div.teamQualities-carousel-container > ul.carousel-slides-container {
+div.teamQualities-carousel-container > ul.carousel-slides {
   height: 250px;
   max-width: 976px;
 }
@@ -30,13 +30,13 @@ li.teamQuality-content-container > * {
 /* < Responsiveness > */
 
 @media (max-width: 1100px) {
-  div.teamQualities-carousel-container > ul.carousel-slides-container {
+  div.teamQualities-carousel-container > ul.carousel-slides {
     height: 300px;
   }
 }
 
 @media (max-width: 900px) {
-  div.teamQualities-carousel-container > ul.carousel-slides-container {
+  div.teamQualities-carousel-container > ul.carousel-slides {
     height: 330px;
   }
 }
@@ -48,13 +48,13 @@ li.teamQuality-content-container > * {
 }
 
 @media (max-width: 500px) {
-  div.teamQualities-carousel-container > ul.carousel-slides-container {
+  div.teamQualities-carousel-container > ul.carousel-slides {
     height: 450px;
   }
 }
 
 @media (max-width: 400px) {
-  div.teamQualities-carousel-container > ul.carousel-slides-container {
+  div.teamQualities-carousel-container > ul.carousel-slides {
     height: 510px;
   }
 }
