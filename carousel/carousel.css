@@ -15,37 +15,34 @@ div.carousel-box > h2 {
 
 
 div.carousel-container {
-  height: max-content;
+  position: relative;
   align-self: normal; /* Override the align-items: center set in its parent(div.carousel-box). */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 24px;
   overflow-x: hidden;
 }
 
 ul.carousel-slides {
-  position: relative;
   height: max-content;
   display: flex;
-  flex-grow: 1;
   scrollbar-width: none;
 }
 
 li.slide {
-  position: absolute;
+  width: 100%;
+  flex: 1 0 auto;
   height: 100%;
-  opacity: 0;
-}
-/* These 2 opacity lines handle the start/end state. The in-between logic is handled by carousel.js. */
-li.slide.active {
-  opacity: 1;
 }
 
 div.carousel-container > div.fa-container {
+  position: relative;
+  z-index: 1;
   flex: 0 0 48px;
   color: var(--primary500);
   cursor: pointer;
+  background: linear-gradient(to bottom, #ffffff 50%, #e9efff 100%);
 }
 
 

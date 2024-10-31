@@ -11,7 +11,6 @@ const qualitiesSection = document.querySelector(
   "section.teamQualities-section"
 );
 
-// Creates a mouse
 
 // A callback function to handle when the element comes into view
 const observerCallback = (entries, observer) => {
@@ -71,31 +70,31 @@ const observerCallback = (entries, observer) => {
           });
         });
       } 
-      else if (entry.target.classList.contains("teamQualities-section")) {
-        // Start the interval if it hasn't been started yet
-        let intervalId; // Variable to store the interval ID
-        if (!intervalId) {
-          intervalId = setInterval(function () {
-            // Create a new mouse event
-            const event = new MouseEvent("click", {
-              bubbles: true, // Whether the event bubbles up through the DOM
-              cancelable: true, // Whether the event is cancelable
-              view: window, // The window in which the event is being created
-            });
+      // else if (entry.target.classList.contains("teamQualities-section")) {
+      //   // Start the interval if it hasn't been started yet
+      //   let intervalId; // Variable to store the interval ID
+      //   if (!intervalId) {
+      //     intervalId = setInterval(function () {
+      //       // Create a new mouse event
+      //       const event = new MouseEvent("click", {
+      //         bubbles: true, // Whether the event bubbles up through the DOM
+      //         cancelable: true, // Whether the event is cancelable
+      //         view: window, // The window in which the event is being created
+      //       });
 
-            // Dispatch the event on the button
-            document
-              .querySelector("div.teamQualities-next-arrow")
-              .dispatchEvent(event);
-          }, 10000); // Trigger the event every 5 seconds
-        }
-      } else {
-        // Clear the interval when the element is out of view
-        if (intervalId) {
-          clearInterval(intervalId);
-          console.log("Element is out of view, interval cleared.");
-        }
-      }
+      //       // Dispatch the event on the button
+      //       document
+      //         .querySelector("div.teamQualities-next-arrow")
+      //         .dispatchEvent(event);
+      //     }, 5000); // Trigger the event every 5 seconds
+      //   }
+      // } else {
+      //   // Clear the interval when the element is out of view
+      //   if (intervalId) {
+      //     clearInterval(intervalId);
+      //     console.log("Element is out of view, interval cleared.");
+      //   }
+      // }
     }
   });
 };

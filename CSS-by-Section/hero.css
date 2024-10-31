@@ -40,6 +40,8 @@ div.hero-box {
   }
   
   div.title-image-box {
+    position: relative;
+    z-index: -1;
     width: 46%;
     flex: 0 1 590px;
   }

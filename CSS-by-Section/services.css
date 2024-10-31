@@ -1,6 +1,7 @@
 /* < Services Section > */
 
 div.services-box {
+    max-width: 1400px;
     flex-direction: column;
     align-items: center;
   }
