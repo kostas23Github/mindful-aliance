@@ -1,7 +1,7 @@
 /* < Navigation Menu MOBILE > */
 
 nav {
-  background-color:  #EAEDFF;
+  background-color: #eaedff;
 }
 
 div.overlay-container {
@@ -17,13 +17,13 @@ div.overlay {
   top: 0;
   z-index: 100;
   transform: translateX(-100%);
-  transition: transform .6s .4s, opacity 1s .1s;
+  transition: transform 0.6s 0.4s, opacity 1s 0.1s;
 }
 
 div.overlay.show {
   transform: translateX(0%);
   opacity: 1;
-  transition: transform .8s, opacity .7s .1s;
+  transition: transform 0.8s, opacity 0.7s 0.1s;
 }
 
 div.menu-box-container {
@@ -39,13 +39,13 @@ div.menu-box-container {
   flex-direction: column;
   opacity: 0;
   transform: translateX(-100%);
-  transition: transform .8s .1s, opacity .8s;
+  transition: transform 0.8s 0.1s, opacity 0.8s;
 }
 
 div.menu-box-container.show {
   transform: translateX(0%);
   opacity: 1;
-  transition: transform 1s .8s, opacity 1s .3s;
+  transition: transform 1s 0.8s, opacity 1s 0.3s;
 }
 
 ul.main-menu.mobile {
@@ -97,8 +97,7 @@ nav {
   position: fixed;
   top: 0;
   z-index: 3; /* The hero section is 2 & 1. */
-  /* background-color: #ffffffc5; */
-  transition: min-height .3s ease-out, max-height .3s ease-out;
+  transition: min-height 0.3s ease-out, max-height 0.3s ease-out;
 }
 
 div.menu-box-lg {
@@ -149,7 +148,7 @@ a.consultation-btn {
   padding: 15px 18px;
   transition: 0.3s;
   box-shadow: 0 0 15px #00000026;
-  letter-spacing: .7px;
+  letter-spacing: 0.7px;
   line-height: 16px;
   font-size: var(--text-size-smaller);
   flex-grow: 1;
@@ -261,7 +260,7 @@ ul.dropdown-list > li.dropdown-item {
   }
 }
 
-@media (min-width: 1440px) { 
+@media (min-width: 1440px) {
   /* Since it is position: fixed, margin prop doesn't work, so the 15% in width reduction of every elem is added to its padding(15/2). 80px is what it had before. */
   nav {
     padding: 8px calc(7.5% + 80px);
@@ -271,6 +270,17 @@ ul.dropdown-list > li.dropdown-item {
 @media (min-width: 1600px) {
   nav {
     padding: 8px calc(10% + 80px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 2600px) {
+  nav {
+    /* nav inner content's max-width(-padding) must be 2160px, so I subtract the remaing space. Half values for each side. */
+    padding: 8px calc(80px + 50vw - 1080px);
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 

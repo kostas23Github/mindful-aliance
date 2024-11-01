@@ -21,7 +21,7 @@ div.carousel-container {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 ul.carousel-slides {

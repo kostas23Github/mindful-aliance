@@ -51,8 +51,8 @@ let lastScrollTop = 0;
 const setNavHeight = function () {
   let currentScrollTop = document.documentElement.scrollTop;
   if (currentScrollTop > lastScrollTop) {
-    nav.style.maxHeight = "50px";
-    nav.style.minHeight = "50px";
+    nav.style.maxHeight = "60px";
+    nav.style.minHeight = "60px";
   } else {
     nav.style.minHeight = "90px";
     nav.style.maxHeight = "90px";
@@ -61,7 +61,7 @@ const setNavHeight = function () {
   if (lastScrollTop != 0) {
     nav.style.backgroundColor = 'white';
   } else {
-    nav.style.backgroundColor = 'inherit';
+    nav.style.backgroundColor = 'transparent';
   }
 }
 
