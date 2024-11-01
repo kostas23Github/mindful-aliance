@@ -1,6 +1,7 @@
 /* Carousel Universal Styles */
 
 div.carousel-box {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -16,12 +17,11 @@ div.carousel-box > h2 {
 
 div.carousel-container {
   position: relative;
-  align-self: normal; /* Override the align-items: center set in its parent(div.carousel-box). */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 ul.carousel-slides {
@@ -32,7 +32,7 @@ ul.carousel-slides {
 
 li.slide {
   width: 100%;
-  flex: 1 0 auto;
+  flex: 1 0 auto; 
   height: 100%;
 }
 
@@ -44,7 +44,6 @@ div.carousel-container > div.fa-container {
   cursor: pointer;
   background: linear-gradient(to bottom, #ffffff 50%, #e9efff 100%);
 }
-
 
 li.slide i::before {
   font-size: 28px;

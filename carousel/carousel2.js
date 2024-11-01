@@ -45,7 +45,7 @@ const slideContent = [
 ];
 
 // Get/Create content from HTML file.
-const carouselSlides = document.querySelector("ul.carousel-slides");
+const carouselSlidesT = document.querySelector("ul.teamQualities-carousel-slides");
 
 // Add content to each slide
 const qualitiesArr = slideContent.map((slide, index) => {
@@ -59,117 +59,154 @@ const qualitiesArr = slideContent.map((slide, index) => {
   h3.innerHTML = slide.header.icon + slide.header.title;
   p.textContent = slide.text;
 
-  carouselSlides.appendChild(li);
+  carouselSlidesT.appendChild(li);
   return li;
 });
 
 // Get the elem containing ALL carousel items.
-const carouselContainer = document.querySelector(".carousel-container");
+const carouselContainerT = document.querySelector(".teamQualities-carousel-container");
 
-const btnNext = document.querySelector(".teamQualities-next-arrow");
-const btnPrev = document.querySelector(".teamQualities-prev-arrow");
+const btnNextT = document.querySelector(".teamQualities-next-arrow");
+const btnPrevT = document.querySelector(".teamQualities-prev-arrow");
 
-const circlesContainer = document.querySelector("div.carousel-index-container");
-const circlesContainer2 = document.querySelector(
-  "div.customer-feedback-box > div.carousel-index-container"
-);
+const circlesContainerT = document.querySelector(".teamQualities-index-container");
 
 // Get width of a slide elem.
-const slideWidth = qualitiesArr[0].getBoundingClientRect().width;
+const slideWidthT = qualitiesArr[0].getBoundingClientRect().width;
 
 // The number of slides
-const lastIndex = qualitiesArr.length - 1;
+const lastIndexT = qualitiesArr.length - 1;
 
 // Get gap between slides.
-const slidesGap = parseInt(window.getComputedStyle(carouselSlides).gap, 10);
+const slidesGapT = parseInt(window.getComputedStyle(carouselSlidesT).gap, 10);
 
 // To get the total gap distance, multiply each gap with the number of slides
-const slidesTotalGap = slidesGap * lastIndex;
+const slidesTotalGapT = slidesGapT * lastIndexT;
 
 // Get margin or padding between slides.
-const carContPaddingRight = parseInt(
-  window.getComputedStyle(carouselContainer).paddingRight,
+const carContPaddingRightT = parseInt(
+  window.getComputedStyle(carouselContainerT).paddingRight,
   10
 );
-const carContPaddingLeft = parseInt(
-  window.getComputedStyle(carouselContainer).paddingLeft,
+const carContPaddingLeftT = parseInt(
+  window.getComputedStyle(carouselContainerT).paddingLeft,
   10
 );
 
 // Get width of the carousel parent container.
-let carContWidth = carouselContainer.getBoundingClientRect().width;
+let carContWidthT = carouselContainerT.getBoundingClientRect().width;
 
 // Compute the combined width of all slides + their gaps.
-const slidesWidth = slideWidth * qualitiesArr.length + slidesTotalGap;
+const slidesWidthT = slideWidthT * qualitiesArr.length + slidesTotalGapT;
 
 // Disable carousel when all items are visible.
-if (carContWidth > slidesWidth) {
-  btnNext.disabled = true;
-  btnPrev.disabled = true;
+if (carContWidthT > slidesWidthT) {
+  btnNextT.disabled = true;
+  btnPrevT.disabled = true;
 }
 
 // Get the leftmost position of the carousel parent container.
-let carContLeftPos = carouselContainer.getBoundingClientRect().left;
+let carContLeftPosT = carouselContainerT.getBoundingClientRect().left;
 
-btnNext.addEventListener("click", () => {
+// Get current time, to handle fast clicks.
+let currentTimeT = Date.now();
+
+btnNextT.addEventListener("click", () => {
+  // 600ms is the translateX transition, so I need to stop clicks if the transition hasn't finished.
+  if (Date.now() - currentTimeT < 600) return;
+
+  // Update time for future clicks
+  currentTimeT = Date.now();
+
   // Get the rightmost position of the elem based on the viewport by adding to its left position its width value.
-  let carContRightPos = carContLeftPos + carContWidth;
+  let carContRightPosT = carContLeftPosT + carContWidthT;
 
   // Get the rightmost position of the last arr elem(slide). This is needed to reset the carousel when the last slide comes into view & the forward btn is pressed.
-  let lastSlideRightPos =
-    qualitiesArr[lastIndex].getBoundingClientRect().left + slideWidth;
+  let lastSlideRightPosT =
+    qualitiesArr[lastIndexT].getBoundingClientRect().left + slideWidthT;
 
   // While last elem of the slides arr is more to the right of the carousel container keep pushing all slides to the left, else reset!
   // Or else if the last elem of the arr is not visible push slides to the left until it is. The value the carousel is pushed is the width of the slide + the gap margin.
-  //   console.log(carContRightPos, lastSlideRightPos);
 
   // Add a buffer(100) if the user clicks too fast & the slide transition(600ms) isn't complete so the lastSlideRightPos is not yet in place.
 
-  if (carContRightPos + 100 < lastSlideRightPos) {
-    carouselSlides.style.transform += `translateX(-${
-      slideWidth + slidesGap
+  if (carContRightPosT < lastSlideRightPosT) {
+    carouselSlidesT.style.transform += `translateX(-${
+      slideWidthT + slidesGapT
     }px)`;
   } else {
-    carouselSlides.style.transform = `translateX(0px)`;
+    carouselSlidesT.style.transform = `translateX(0px)`;
   }
 
   //   Update last slide's most right position, for when the btn is clicked again.
-  lastSlideRightPos =
-    qualitiesArr[lastIndex].getBoundingClientRect().left + slideWidth + 10;
+  lastSlideRightPosT =
+    qualitiesArr[lastIndexT].getBoundingClientRect().left + slideWidthT + 10;
+
+  // Move current circle one right.
+  // Get index value of current circle.
+  const currentCircleIndexT = circlesQualities.findIndex((circle) =>
+    circle.classList.contains("active")
+  );
+  // Reset active status of all circles.
+  circlesQualities[currentCircleIndexT].classList.remove("active");
+
+  if (currentCircleIndexT < circlesQualities.length - 1) {
+    circlesQualities[currentCircleIndexT + 1].classList.add("active");
+  } else {
+    // Edge case, go to the start.
+    circlesQualities[0].classList.add("active");
+  }
 });
 
-btnPrev.addEventListener("click", () => {
-  
+btnPrevT.addEventListener("click", () => {
+
+  // 600ms is the translateX transition, so I need to stop clicks if the transition hasn't finished.
+  if (Date.now() - currentTimeT < 600) return;
+
+  // Update time for future clicks
+  currentTimeT = Date.now();
+
   // Update the leftmost position of the carousel parent container.
-  carContLeftPos = carouselContainer.getBoundingClientRect().left;
+  carContLeftPosT = carouselContainerT.getBoundingClientRect().left;
 
   // Get the leftmost position of the first slide. This is needed to reset the carousel when the first elem comes into view & the previous btn is pressed.
-  let firstSlideLeftPos = qualitiesArr[0].getBoundingClientRect().left;
+  let firstSlideLeftPosT = qualitiesArr[0].getBoundingClientRect().left;
 
   // While first elem of the slides arr is more to the left of the carousel container keep pushing right, else move all slides the width of the container + the right padding.
 
-  if (carContLeftPos > firstSlideLeftPos) {
-
-    carouselSlides.style.transform += `translateX(${slideWidth + slidesGap}px)`;
-
+  if (carContLeftPosT > firstSlideLeftPosT) {
+    carouselSlidesT.style.transform += `translateX(${slideWidthT + slidesGapT}px)`;
   } else {
-    console.log(slidesWidth);
-
     // Move the carousel to the end of the slides. The total distance of the slides minus the one already in view.
-    carouselSlides.style.transform = `translateX(${
-      -slidesWidth + slideWidth
+    carouselSlidesT.style.transform = `translateX(${
+      -slidesWidthT + slideWidthT
     }px)`;
-    
   }
 
   //   Update last slide's most right position.
-  firstSlideLeftPos = qualitiesArr[0].getBoundingClientRect().left;
+  firstSlideLeftPosT = qualitiesArr[0].getBoundingClientRect().left;
+
+  // Move current circle one left.
+  // Get index value of current circle.
+  const currentCircleIndexT = circlesQualities.findIndex((circle) =>
+    circle.classList.contains("active")
+  );
+  // Reset active status of all circles.
+  circlesQualities[currentCircleIndexT].classList.remove("active");
+
+  if (currentCircleIndexT > 0) {
+    circlesQualities[currentCircleIndexT - 1].classList.add("active");
+  } else {
+    // Edge case, go to the end.
+    circlesQualities[circlesQualities.length - 1].classList.add("active");
+  }
 });
 
 let circlesQualities = [];
 
 // Create carousel index circles.
-const carouselCircles = (carouselSlides, parent) => {
+const carouselCirclesT = (carouselSlides, parent) => {
+
   carouselSlides.forEach((slide, index) => {
     const circle = document.createElement("div");
     circle.classList.add("index-circle");
@@ -177,24 +214,26 @@ const carouselCircles = (carouselSlides, parent) => {
     parent.appendChild(circle);
     circlesQualities.push(circle);
     // On load first slide is visible, hence the first circle.
-    circlesQualities[0].classList.add('active');
+    circlesQualities[0].classList.add("active");
     circle.addEventListener("click", (e) => circleMoveToSlide(e));
   });
+
 };
 
-const circleMoveToSlide = (e) => {
-    // Reset active class for all circles.
-    circlesQualities.forEach(circle => circle.classList.remove('active'));
-    // To the circle clicked add active class.
-    e.currentTarget.classList.add('active');
-    // Reset carousel position.
-    carouselSlides.style.transform = `translateX(0px)`;
-    // Get the clicked circle's index value
-    const targetIndex = parseInt(e.currentTarget.getAttribute('index'), 10);
+const circleMoveToSlideT = (e) => {
+  // Reset active class for all circles.
+  circlesQualities.forEach((circle) => circle.classList.remove("active"));
+  // To the circle clicked add active class.
+  e.currentTarget.classList.add("active");
+  // Reset carousel position.
+  carouselSlidesT.style.transform = `translateX(0px)`;
+  // Get the clicked circle's index value
+  const targetIndexT = parseInt(e.currentTarget.getAttribute("index"), 10);
 
-    // Move carousel to this slide. For example the 3rd circle is clicked, so 2nd index multiplied by the slide's width plus the gaps btw them.
-    carouselSlides.style.transform = `translateX(-${slideWidth * targetIndex + slidesGap * targetIndex}px)`;
-    console.log(    carouselSlides.style.transform = `translateX(-${slideWidth * targetIndex + slidesGap * targetIndex}px)`)    
-}
+  // Move carousel to this slide. For example the 3rd circle is clicked, so 2nd index multiplied by the slide's width plus the gaps btw them.
+  carouselSlidesT.style.transform = `translateX(-${
+    slideWidthT * targetIndexT + slidesGapT * targetIndexT
+  }px)`;
+};
 
-carouselCircles(qualitiesArr, circlesContainer);
+carouselCirclesT(qualitiesArr, circlesContainerT);

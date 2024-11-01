@@ -22,7 +22,7 @@ section.solutions-section {
   }
   
   div.solution-card-container {
-    height: 463px;
+    max-height: 463px;
     padding: 28px;
     background: linear-gradient(135deg, #fbfbff, #eef0ff 49%, #fbfbfb00 200%);
     box-shadow: 0 0 20px #7a8dff26;
@@ -34,8 +34,10 @@ section.solutions-section {
   }
   
   div.solution-card-container > img {
+    max-width: 304px;
     width: 100%;
-    height: 203px;
+    max-height: 203px;
+    aspect-ratio: 304/203;
     border-radius: 10px;
   }
   

@@ -2,10 +2,15 @@
 
 .teamQualities-box {
   margin: 0 auto;
-  width: 1280px; /* 1120px + 160px padding */
+  width: 1280px; /* 1120px + 2 * 80px padding */
 }
 
-div.teamQualities-carousel-container > ul.carousel-slides {
+.teamQualities-carousel-container {
+  justify-content: space-between;
+  align-self: normal; /* Override the align-items: center set in its parent(div.carousel-box). */
+}
+
+ul.teamQualities-carousel-slides {
   width: 976px;
   gap: 72px;
   transition: transform 600ms ease-out;
@@ -43,13 +48,14 @@ li.teamQuality-content-container > * {
     width: 100%;
   }
 
-  div.teamQualities-carousel-container > ul.carousel-slides {
+
+  ul.teamQualities-carousel-slides {
     width: calc(100% - 144px);
   }
 }
 
 @media (max-width: 700px) {
-  div.teamQualities-carousel-container > ul.carousel-slides {
+  ul.teamQualities-carousel-slides {
     width: 100%;
   }
 
