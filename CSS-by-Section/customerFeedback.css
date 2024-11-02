@@ -1,7 +1,7 @@
 /* < Customer Feedback Section > */
 div.customers-statement-carousel-container {
-  /* 2*slides + 2*carousel-gap + 2*arrow + slide-gap */
-  width: calc(1000px + 48px + 96px + 72px);
+  /* 2*slides + 2*carousel-gap + 2*arrow + slide-gap - slide-shadow*/
+  width: calc(1000px + 48px + 96px + 72px - 20px);
 }
 
 ul.customers-statement-carousel-slides {
@@ -91,8 +91,8 @@ div.customers-statement-index-container {
 
 @media (max-width: 1395px) {
   div.customers-statement-carousel-container {
-    /* 1*slide + 2*carousel-gap + 2*arrow */
-    width: calc(500px + 48px + 96px);
+    /* 1*slide + 2*carousel-gap + 2*arrow - slide-shadow*/
+    width: calc(500px + 48px + 96px - 20px);
   }
 
   ul.customers-statement-carousel-slides {
