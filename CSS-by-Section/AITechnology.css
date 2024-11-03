@@ -3,7 +3,6 @@
 div.ai-box {
     flex-direction: column;
     gap: 40px;
-    /* overflow: scroll; */
   }
   
   div.ai-header {
@@ -25,7 +24,8 @@ div.ai-box {
     flex-direction: row-reverse;
     background-image: url(../assets/parallax-bg-image.png);
     background-attachment: fixed; /* Makes the background fixed in place */
-    background-size: 100% 100%; /* Cover the entire area */
+    background-position: center;
+    background-size: 150% 100%; /* Cover the entire area */
   }
   
   ul.ai-technologies-list {

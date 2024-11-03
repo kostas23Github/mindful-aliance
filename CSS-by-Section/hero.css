@@ -1,7 +1,8 @@
 /* < Hero Section > */
 
 section.hero-section {
-  background-color: #EAEDFF;
+  /* background-color: #EAEDFF; */
+  background: linear-gradient(to top, white, #EAEDFF 10%);
 }
 
 div.hero-box {

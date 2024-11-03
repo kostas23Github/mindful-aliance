@@ -213,7 +213,7 @@ li.menu-item.show ul.dropdown-list {
   max-height: 150px; /* Arbitrary large value */
   transition: max-height 0.5s ease-out; /* Transition max-height */
   border: 1px solid #7a8dff26;
-  padding: 8px 12px;
+  padding: 8px 16px;
   box-shadow: 0 0 20px #7a8dff26;
   background-color: rgba(255, 255, 255, 0.9);
 }
