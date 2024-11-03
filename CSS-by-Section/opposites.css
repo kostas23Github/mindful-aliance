@@ -12,6 +12,8 @@ section.opposites-container-section {
   }
   
   div.opposites-box {
+    display: flex;
+    justify-content: center;
     row-gap: 60px;
     flex-wrap: wrap;
   }

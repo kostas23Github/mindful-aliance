@@ -1,6 +1,7 @@
 /* Carousel Universal Styles */
 
 div.carousel-box {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -15,8 +16,7 @@ div.carousel-box > h2 {
 
 
 div.carousel-container {
-  height: max-content;
-  align-self: normal; /* Override the align-items: center set in its parent(div.carousel-box). */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,32 +24,28 @@ div.carousel-container {
   overflow-x: hidden;
 }
 
-ul.carousel-slides-container {
-  position: relative;
+ul.carousel-slides {
   height: max-content;
   display: flex;
-  flex-grow: 1;
   scrollbar-width: none;
 }
 
-li.carousel-slide {
-  position: absolute;
+li.slide {
+  width: 100%;
+  flex: 1 0 auto; 
   height: 100%;
-  opacity: 0;
-}
-/* These 2 opacity lines handle the start/end state. The in-between logic is handled by carousel.js. */
-li.carousel-slide.active {
-  opacity: 1;
 }
 
 div.carousel-container > div.fa-container {
+  position: relative;
+  z-index: 1;
   flex: 0 0 48px;
   color: var(--primary500);
   cursor: pointer;
+  background: transparent;
 }
 
-
-li.carousel-slide i::before {
+li.slide i::before {
   font-size: 28px;
   margin-right: 12px;
 }

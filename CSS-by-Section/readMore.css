@@ -60,4 +60,10 @@ a.readMore-btn:hover {
   }
 }
 
+@media (max-width: 403px) {
+  p.huge-text {
+    line-height: 80px;
+  }
+}
+
 /* </ Responsiveness > */

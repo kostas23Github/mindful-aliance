@@ -193,7 +193,23 @@ section.ai-section {
 
 @media (min-width: 1440px) { 
   .w-1440 {
+    max-width: 2160px;
     width: 85%;
     margin: 0 auto;
   }
+
+  nav {
+    width: 85%;
+  }
 }
+
+@media (min-width: 1600px) { 
+  .w-1440 {
+    width: 80%;
+  }
+
+  nav {
+    width: 80%;
+  }
+}
+

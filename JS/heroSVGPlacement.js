@@ -25,10 +25,11 @@ const heroSVGPlacement = function () {
   svg.setAttribute("height", svgHeight);
 
   svgSeparator.style.top = `${svgHeight * -1}px`;
-
+  
   if (window.innerWidth >= 1035) {
     // Negate, subtract 180 & convert to string
     heroPartnersBox.style.top = `${svgHeight * -1 - 230}px`;
+    
     heroPartnersBox.style.height = "440px";
     heroSection.style.height = "850px";
   } else if (window.innerWidth >= 515) {
@@ -47,5 +48,5 @@ const heroSVGPlacement = function () {
 };
 
 
-window.onload = heroSVGPlacement;
+window.onload = heroSVGPlacement();
 window.addEventListener("resize", heroSVGPlacement);

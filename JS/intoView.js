@@ -11,12 +11,13 @@ const qualitiesSection = document.querySelector(
   "section.teamQualities-section"
 );
 
-// Creates a mouse
-
 // A callback function to handle when the element comes into view
 const observerCallback = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
+      // This variable must have a broader scope bc it depends on whether its section is visible(i.e. == entry.target)
+      let intervalIdTeamQual;
+
       // Read More Section's entry animation
       if (entry.target.classList.contains("readMore-title-box")) {
         document.querySelector("div.readMore-title-box > p.huge-text").animate(
@@ -49,61 +50,73 @@ const observerCallback = (entries, observer) => {
           parseInt(hugeText.textContent)
         );
 
-        accomplismentArr.forEach((hugeText, i) => {
+        accomplismentArr.forEach((semiHugeText, i) => {
           // Initialize counter to 0
           let currentNumber = 0;
           let intervalTime = 900 / finalNumbers[i]; // Have the animation finish at roughly the same time.
 
-          let intervalId = setInterval(() => {
+          // Store interval id number and clear it when semi-huge-text numbers finish their animation
+          const intervalIdWhyUs = setInterval(() => {
             // This callback increments p.semi-huge text's value at set periods of time.
             if (parseInt(currentNumber) >= finalNumbers[i]) {
-              hugeText.textContent = finalNumbers[i] + "+"; // At the final iteration add + sign.
-              clearInterval(intervalId);
+              semiHugeText.textContent = finalNumbers[i] + "+"; // At the final iteration add + sign.
+              clearInterval(intervalIdWhyUs);
             } else {
               currentNumber++; // Increment the number
-              hugeText.textContent = currentNumber; // Update the text content of the <p> element
+              semiHugeText.textContent = currentNumber; // Update the text content of the <p> element
             }
           }, intervalTime);
 
-          hugeText.animate([{ opacity: 0 }, { opacity: 1 }], {
+          semiHugeText.animate([{ opacity: 0 }, { opacity: 1 }], {
             duration: 1100,
             easing: "ease-in",
           });
         });
-      } 
-      else if (entry.target.classList.contains("teamQualities-section")) {
-        // Start the interval if it hasn't been started yet
-        let intervalId; // Variable to store the interval ID
-        if (!intervalId) {
-          intervalId = setInterval(function () {
-            // Create a new mouse event
-            const event = new MouseEvent("click", {
-              bubbles: true, // Whether the event bubbles up through the DOM
-              cancelable: true, // Whether the event is cancelable
-              view: window, // The window in which the event is being created
-            });
-
-            // Dispatch the event on the button
-            document
-              .querySelector("div.teamQualities-next-arrow")
-              .dispatchEvent(event);
-          }, 10000); // Trigger the event every 5 seconds
-        }
-      } else {
-        // Clear the interval when the element is out of view
-        if (intervalId) {
-          clearInterval(intervalId);
-          console.log("Element is out of view, interval cleared.");
-        }
       }
     }
   });
 };
 
-// Create an instance of the IntersectionObserver
-const observer = new IntersectionObserver(observerCallback);
+// Initialize interval id variable which stores a value which can be cleared when element is out of view.
+let intervalIdTeamQual;
+const observerCallbackTeamQualities = (entries, observer) => {
+  if (entries[0].isIntersecting) {
+    // Start the interval if it hasn't been started yet(i.e. an id doesn't exist)
+    if (!intervalIdTeamQual) {
+      intervalIdTeamQual = setInterval(function () {
+        // Checkes whether 4.5sec has passed from last click, if not waits another 5sec
+        if (Date.now() - lastSlideChangeTimer > 4500) {
+          // Create a new mouse event
+          const event = new MouseEvent("click", {
+            bubbles: true, // Whether the event bubbles up through the DOM
+            cancelable: true, // Whether the event is cancelable
+            view: window, // The window in which the event is being created
+          });
 
-// Start observing the element
+          // Dispatch the event on the button
+          document
+            .querySelector("div.teamQualities-next-arrow")
+            .dispatchEvent(event);
+        }
+      }, 5000); // Trigger the event every 5 seconds
+    }
+  } else if (intervalIdTeamQual) {
+    // Clear the interval when the element is out of view
+    clearInterval(intervalIdTeamQual);
+
+    // Make id falsy so when section in view again, the if statement can start a new interval
+    intervalIdTeamQual = false;
+  }
+};
+
+// Create two instances of the IntersectionObserver API
+const observer = new IntersectionObserver(observerCallback);
+// This section needs a separate observer
+const observerTeamQualities = new IntersectionObserver(
+  observerCallbackTeamQualities
+);
+
+// Start observing the elements
 observer.observe(readMoreText);
 observer.observe(whyUsBox);
-observer.observe(qualitiesSection);
+observerTeamQualities.observe(qualitiesSection);

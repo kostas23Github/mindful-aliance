@@ -1,47 +1,48 @@
 /* < Services Section > */
 
 div.services-box {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  div.services-box > h2 {
-    color: var(--primary800);
-  }
-  
-  div.servicesList-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-  }
-  
+  max-width: 1400px;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.services-box > h2 {
+  color: var(--primary800);
+}
+
+div.servicesList-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+a.service-btn {
+  justify-content: center;
+  align-items: center;
+  width: 362px;
+  height: 78px;
+  padding: 20px 40px;
+  background: linear-gradient(to bottom right, #0548d0, #1b2254);
+  color: var(--white);
+  gap: 16px;
+}
+
+a.service-btn > div.fa-container > i::before {
+  font-size: 24px;
+}
+
+/* </ Services Section > */
+
+/* < Responsiveness > */
+
+@media (max-width: 550px) {
   a.service-btn {
-    justify-content: center;
-    align-items: center;
-    width: 362px;
-    height: 78px;
-    padding: 20px 40px;
-    background: linear-gradient(to bottom right, #0548d0, #1b2254);
-    color: var(--white);
-    gap: 16px;
+    width: 300px;
+    height: 70px;
+    padding: 10px 20px;
+    gap: 12px;
   }
-  
-  a.service-btn > div.fa-container > i::before {
-    font-size: 24px;
-  }
-  
-  /* </ Services Section > */
+}
 
-  /* < Responsiveness > */
-
-  @media (max-width: 550px) {
-    a.service-btn {
-        width: 322px;
-        height: 70px;
-        padding: 10px 20px;
-        gap: 12px;
-    }
-  }
-
-  /* </ Responsiveness > */
+/* </ Responsiveness > */

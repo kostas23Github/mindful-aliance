@@ -43,4 +43,10 @@ div.whyUs-box {
     font-size: var(--text-size-smaller);
   }
   
+@media (max-width: 403px) {
+  div.whyUs-box > p.huge-text {
+    top: 40px;
+  }
+}
+
   /* </ Why Us Section > */
