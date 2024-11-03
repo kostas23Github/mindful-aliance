@@ -108,15 +108,16 @@ if (carContWidthT > slidesWidthT) {
 // Get the leftmost position of the carousel parent container.
 let carContLeftPosT = carouselContainerT.getBoundingClientRect().left;
 
-// Get current time, to handle fast clicks.
-let currentTimeT = Date.now();
+// Initialize a variable that stores the time when each slide change happens, to prevent fast clicking to the carousel, i.e. the transition hasn't finishes or to start the auto slide.
+let lastSlideChangeTimer = Date.now();
 
 btnNextT.addEventListener("click", () => {
-  // 600ms is the translateX transition, so I need to stop clicks if the transition hasn't finished.
-  if (Date.now() - currentTimeT < 600) return;
 
-  // Update time for future clicks
-  currentTimeT = Date.now();
+  // 600ms is the translateX transition, so I need to stop clicks if the transition hasn't finished.
+  if (Date.now() - lastSlideChangeTimer < 600) return;
+
+  // Update timer for future clicks
+  lastSlideChangeTimer = Date.now();
 
   // Get the rightmost position of the elem based on the viewport by adding to its left position its width value.
   let carContRightPosT = carContLeftPosT + carContWidthT;
@@ -147,8 +148,8 @@ btnNextT.addEventListener("click", () => {
   const currentCircleIndexT = circlesQualities.findIndex((circle) =>
     circle.classList.contains("active")
   );
-  // Reset active status of all circles.
-  circlesQualities[currentCircleIndexT].classList.remove("active");
+  // Reset active status of all circles for added safety.
+  circlesQualities.forEach(circle => circle.classList.remove("active"));
 
   if (currentCircleIndexT < circlesQualities.length - 1) {
     circlesQualities[currentCircleIndexT + 1].classList.add("active");
@@ -161,10 +162,10 @@ btnNextT.addEventListener("click", () => {
 btnPrevT.addEventListener("click", () => {
 
   // 600ms is the translateX transition, so I need to stop clicks if the transition hasn't finished.
-  if (Date.now() - currentTimeT < 600) return;
+  if (Date.now() - lastSlideChangeTimer < 600) return;
 
-  // Update time for future clicks
-  currentTimeT = Date.now();
+  // Update timer for future clicks
+  lastSlideChangeTimer = Date.now();
 
   // Update the leftmost position of the carousel parent container.
   carContLeftPosT = carouselContainerT.getBoundingClientRect().left;
@@ -191,8 +192,8 @@ btnPrevT.addEventListener("click", () => {
   const currentCircleIndexT = circlesQualities.findIndex((circle) =>
     circle.classList.contains("active")
   );
-  // Reset active status of all circles.
-  circlesQualities[currentCircleIndexT].classList.remove("active");
+  // Reset active status of all circles for added safety.
+  circlesQualities.forEach(circle => circle.classList.remove("active"));
 
   if (currentCircleIndexT > 0) {
     circlesQualities[currentCircleIndexT - 1].classList.add("active");
@@ -215,12 +216,19 @@ const carouselCirclesT = (carouselSlides, parent) => {
     circlesQualities.push(circle);
     // On load first slide is visible, hence the first circle.
     circlesQualities[0].classList.add("active");
-    circle.addEventListener("click", (e) => circleMoveToSlide(e));
+    circle.addEventListener("click", (e) => circleMoveToSlideT(e));
   });
 
 };
 
 const circleMoveToSlideT = (e) => {
+  
+  // Same logic for these transitions.
+  if (Date.now() - lastSlideChangeTimer < 600) return;
+
+  // Update lastSlideChangeTimer for the same reasons as the arrow btns since the same event takes place.
+  lastSlideChangeTimer = Date.now();
+
   // Reset active class for all circles.
   circlesQualities.forEach((circle) => circle.classList.remove("active"));
   // To the circle clicked add active class.

@@ -42,7 +42,7 @@ div.carousel-container > div.fa-container {
   flex: 0 0 48px;
   color: var(--primary500);
   cursor: pointer;
-  background: linear-gradient(to bottom, #ffffff 50%, #e9efff 100%);
+  background: transparent;
 }
 
 li.slide i::before {
