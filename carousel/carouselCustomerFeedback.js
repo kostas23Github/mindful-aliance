@@ -96,8 +96,6 @@ btnNextC.addEventListener("click", () => {
   // While last elem of the slides arr is more to the right of the carousel container keep pushing all slides to the left, else reset!
   // Or else if the last elem of the arr is not visible push slides to the left until it is. The value the carousel is pushed is the width of the slide + the gap margin.
 
-  // Add a buffer(100) if the user clicks too fast & the slide transition(600ms) isn't complete so the lastSlideRightPos is not yet in place.
-
   if (carContRightPosC < lastSlideRightPosC) {
     carouselSlidesC.style.transform += `translateX(-${
       slideWidthC + slidesGapC
